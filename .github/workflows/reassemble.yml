@@ -1,0 +1,32 @@
+name: Reassemble Cracked APK
+
+on:
+  push:
+    branches: [kilo/lucid-qubit-g25]
+  workflow_dispatch:
+
+jobs:
+  reassemble:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download split APK parts
+        run: |
+          ls -la carrom_cracked.part01 carrom_cracked.part02 carrom_cracked.part03
+
+      - name: Reassemble APK from parts
+        run: |
+          cat carrom_cracked.part01 carrom_cracked.part02 carrom_cracked.part03 > Carrom.Disc.Pool_19.5.1_cracked.apk
+          echo "Reassembled size:"
+          ls -la Carrom.Disc.Pool_19.5.1_cracked.apk
+          echo "SHA256:"
+          sha256sum Carrom.Disc.Pool_19.5.1_cracked.apk
+
+      - name: Upload reassembled APK as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Carrom.Disc.Pool_19.5.1_cracked.apk
+          path: Carrom.Disc.Pool_19.5.1_cracked.apk
+          retention-days: 7
