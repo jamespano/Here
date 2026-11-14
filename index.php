@@ -152,7 +152,7 @@ function generateAIResponse($message) {
 
             <!-- Input Area -->
             <div class="input-area">
-                <form id="chatForm" onsubmit="handleSubmit(event)">
+                <form id="chatForm">
                     <div class="input-wrapper">
                         <textarea id="messageInput" rows="1" placeholder="Message ChatAI..."></textarea>
                         <input type="hidden" name="message" id="hiddenMessage">
