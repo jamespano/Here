@@ -150,4 +150,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize
     toggleSendButton();
     scrollToBottom();
+
+    // Toggle sidebar on mobile
+    window.toggleSidebar = function() {
+        document.querySelector('.sidebar').classList.toggle('open');
+    };
+    document.getElementById('sidebar-toggle').addEventListener('click', toggleSidebar);
 });

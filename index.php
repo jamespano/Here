@@ -73,10 +73,11 @@ function generateAIResponse($message) {
                     <i class="fa-solid fa-robot"></i>
                     <span>ChatAI</span>
                 </div>
-                <button class="btn-new-chat" onclick="newChat()">
-                    <i class="fa-solid fa-plus"></i> New chat
-                </button>
+            <button class="btn-new-chat" onclick="newChat()">
+                <i class="fa-solid fa-plus"></i> New chat
             </div>
+
+            <button id="sidebar-toggle" onclick="toggleSidebar()">☰ Toggle</button>
 
             <div class="sidebar-search">
                 <i class="fa-solid fa-magnifying-glass"></i>
